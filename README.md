@@ -1,8 +1,25 @@
 # Hello-Akka
 
-## Source 
+## Summary
 
-[Akka Cookbook - 1: Diving into Akka - Creating an Akka Scala SBT project from scratch](https://www.packtpub.com/mapt/book/Application%20Development/9781785288180/1/ch01lvl1sec9/creating-an-akka-scala-sbt-project-from-scratch)
+An *ActorSystem* is a heavyweight structure per application,
+which allocates n number of threads.
+
+Thus, it is recommended to create one ActorSystem per application,
+until we have a reason to create another one.
+
+### Diving into Akka
+
+ActorSystem is the home for the actors in which they live, it manages the life cycle of an actor and supervises them.On creation, an ActorSystem starts three actors:
+
+ * `/user` - The guardian actor: All user-defined actors are created as a child of the parent actor user, that is, when you create your actor in the ActorSystem, it becomes the child of the user guardian actor, and this guardian actor supervises your actors. If the guardian actor terminates, all your actors get terminated as well.
+ * `/system` - The system guardian: In Akka, logging is also implemented using actors. This special guardian shut downs the logged-in actors when all normal actors have terminated. It watches the user guardian actor, and upon termination of the guardian actor, it initiates its own shutdown.
+ * `/` - The root guardian: The root guardian is the grandparent of all the so-called top-level actors, and supervises all the top-level actors. Its purpose is to terminate the child upon any type of exception. It sets the ActorSystem status as terminated if the guardian actor is able to terminate all the child actors successfully.
+
+For more information on ActorSystem visit:
+
+[http://doc.akka.io/docs/akka/2.4.1/general/actor-systems.html](http://doc.akka.io/docs/akka/2.4.1/general/actor-systems.html)
+
 
 ## Setup
 
@@ -50,7 +67,7 @@ libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.4.4"
 ```
     
 
-2. Run
+2. Update
 
 ```
 $ sbt update
@@ -89,3 +106,12 @@ $ sbt update
 ### IntelliJ Plugin
 
 [Importing an SBT project](https://www.jetbrains.com/help/idea/2016.1/getting-started-with-sbt.html?origin=old_help#import_project)
+
+
+## Chapters
+
+### Chapter 1
+
+Source
+
+[Akka Cookbook - 1: Diving into Akka - Creating an Akka Scala SBT project from scratch](https://www.packtpub.com/mapt/book/Application%20Development/9781785288180/1/ch01lvl1sec9/creating-an-akka-scala-sbt-project-from-scratch)
