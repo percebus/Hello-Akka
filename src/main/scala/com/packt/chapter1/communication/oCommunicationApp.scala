@@ -3,7 +3,7 @@ package com.packt.chapter1.communication
 import akka.actor.{ActorSystem, Props}
 
 object oCommunicationApp extends App {
-  import Messages._
+  import EventTypes._
 
   val oActorSystem = ActorSystem("HelloAkka")
   val randomNumberGenerator = oActorSystem.actorOf(
@@ -14,5 +14,11 @@ object oCommunicationApp extends App {
         Props[QueryActor],
         "queryActor")
 
+  /**
+    Prints the following
+      send me the next random number
+      received a message to generate a random integer
+      received a random number 841431704
+    */
   oQueryActor ! Start(randomNumberGenerator)
 }

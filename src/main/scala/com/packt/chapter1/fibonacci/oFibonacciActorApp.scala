@@ -14,7 +14,7 @@ object oFibonacciActorApp extends App {
 
   // asking for result from actor
   val n = 9
-  val oFuture = (oFibonacciActor? n).mapTo[Int]
+  val oFuture = (oFibonacciActor ? n).mapTo[Int]
   val x = Await.result(oFuture, 10 seconds)
   println(x)
 }

@@ -2,8 +2,8 @@ package com.packt.chapter1.communication
 
 import akka.actor.ActorRef
 
-object Messages {
+object EventTypes {
+  case class Start(actorRef:ActorRef)
+  case object message
   case class Done(random:Int)
-  case object giveMeRandomNumber
-  case class Start(oActorRef:ActorRef)
 }
