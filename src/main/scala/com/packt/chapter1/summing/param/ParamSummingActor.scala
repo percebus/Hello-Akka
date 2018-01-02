@@ -9,7 +9,7 @@ import akka.actor.Actor
 class ParamSummingActor(intitalSum:Int) extends Actor {
   var sum = 0 // state inside the actor
 
-  override def receive: Receive = {
+  override def receive:Receive = {
     case x:Int => // receives message an integer
       sum = intitalSum + sum + x
       println(s"my state as sum is $sum")
