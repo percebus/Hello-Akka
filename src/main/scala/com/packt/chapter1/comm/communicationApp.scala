@@ -1,4 +1,4 @@
-package com.packt.chapter1.communication
+package com.packt.chapter1.comm
 
 import akka.actor.{ActorSystem, Props}
 
