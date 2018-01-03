@@ -7,7 +7,7 @@ import scala.concurrent.Await
 import scala.concurrent.duration._ // 'seconds'
 
 
-object oFibonacciActorApp extends App {
+object fibonacciActorApp extends App {
   implicit val oTimeout = Timeout(10 seconds)
   val oActorSystem = ActorSystem("HelloAkka")
   val oFibonacciActor = oActorSystem.actorOf(Props[FibonacciActor])

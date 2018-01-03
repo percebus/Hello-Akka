@@ -2,7 +2,7 @@ package com.packt.chapter1.mail.priority
 
 import akka.actor.{ActorSystem, Props}
 
-object oPriorityMailboxApp extends App {
+object priorityMailboxApp extends App {
   val oActorSystem = ActorSystem("HelloAkka")
   val oMyPriorityActor = oActorSystem.actorOf( Props[MyPriorityActor].withDispatcher("prio-dispatcher") )
       oMyPriorityActor ! 6.0

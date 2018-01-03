@@ -4,6 +4,7 @@ import com.typesafe.config.Config
 import akka.actor.{ActorRef, ActorSystem}
 import akka.dispatch.{MailboxType, MessageQueue, ProducesMessageQueue}
 
+
 class MyMessageQueueMailboxType extends MailboxType with ProducesMessageQueue[MyMessageQueue] {
 
   def this(settings:ActorSystem.Settings, config:Config) = { this() }

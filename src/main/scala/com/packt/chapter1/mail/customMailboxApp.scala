@@ -1,7 +1,7 @@
 import akka.actor.{ActorSystem, Props}
 import com.packt.chapter1.mail.{MyActor, MySpecialActor}
 
-object oCustomMailboxApp extends App  {
+object customMailboxApp extends App  {
   val oActorSystem = ActorSystem("HelloAkka")
   val oMySpecialActor = oActorSystem.actorOf( Props[MySpecialActor].withDispatcher("custom-dispatcher") )
 

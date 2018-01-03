@@ -3,7 +3,7 @@ package com.packt.chapter1.summing.param
 import akka.actor.{ActorSystem, Props}
 
 
-object oParamSummingActorApp extends App {
+object paramSummingActorApp extends App {
   val oActorSystem = ActorSystem("HelloAkka")
 
   // creating an actor inside the actor system

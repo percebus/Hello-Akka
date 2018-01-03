@@ -2,7 +2,7 @@ package com.packt.chapter1.communication
 
 import akka.actor.{ActorSystem, Props}
 
-object oCommunicationApp extends App {
+object communicationApp extends App {
   import EventTypes._
 
   val oActorSystem = ActorSystem("HelloAkka")
