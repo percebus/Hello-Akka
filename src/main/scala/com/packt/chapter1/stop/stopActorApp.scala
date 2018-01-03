@@ -7,14 +7,14 @@ object stopActorApp extends App{
   val oActorSystem = ActorSystem("HelloAkka")
 
   // externally killing it
-  val someStopActor = oActorSystem.actorOf(Props[StopActor], "someStopActor")
-      someStopActor ! "hello"
-      someStopActor ! PoisonPill
-      someStopActor ! "Are you there?" // nothing!
+  val someStoppingActor = oActorSystem.actorOf(Props[StoppingActor], "someStopActor")
+      someStoppingActor ! "hello"
+      someStoppingActor ! PoisonPill
+      someStoppingActor ! "Are you there?" // nothing!
 
   // internally self stops
-  val otherStopActor = oActorSystem.actorOf(Props[StopActor], "otherStopActor")
-      otherStopActor ! "hello"
-      otherStopActor ! Stop
-      otherStopActor ! "Are you there?" // nothing!
+  val otherStoppingActor = oActorSystem.actorOf(Props[StoppingActor], "otherStopActor")
+      otherStoppingActor ! "hello"
+      otherStoppingActor ! Stop
+      otherStoppingActor ! "Are you there?" // nothing!
 }
