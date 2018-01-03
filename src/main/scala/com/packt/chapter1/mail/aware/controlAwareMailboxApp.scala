@@ -8,5 +8,5 @@ object controlAwareMailboxApp extends App {
       oLoggerActor ! "hello"
       oLoggerActor ! "how are"
       oLoggerActor ! "you?"
-      oLoggerActor ! myControlMessage
+      oLoggerActor ! MyControlMessage
 }
